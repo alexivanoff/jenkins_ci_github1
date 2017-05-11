@@ -4,12 +4,16 @@ pipeline {
     stage('initial') {
       steps {
         parallel(
-          "step 1": {
+          "step 1.1": {
             sh 'pwd'
             
           },
-          "step 2": {
+          "step 1.2": {
             sh 'ls'
+            
+          },
+          "step1.3": {
+            build(job: 'jenkins-ci2', wait: true)
             
           }
         )
