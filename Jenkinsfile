@@ -5,11 +5,11 @@ pipeline {
       steps {
         parallel(
           "step 1": {
-            sh 'echo "1"'
+            sh 'pwd'
             
           },
           "step 2": {
-            sh 'echo "2"'
+            sh 'ls'
             
           }
         )
