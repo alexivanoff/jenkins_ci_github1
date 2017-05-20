@@ -13,7 +13,7 @@ pipeline {
             
           },
           "step1.3": {
-            build(job: 'jenkins-ci2', wait: true)
+            build(job: 'jenkins-ci2', parameters: [[$class: 'StringParameterValue', name: 'FOLDER', value: "/var"]], wait: true)
             
           }
         )
